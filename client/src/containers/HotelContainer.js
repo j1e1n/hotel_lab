@@ -20,10 +20,11 @@ const HotelContainer = () => {
         setBookings(updatedBookingList);
     }
 
-    const handleDelete = idToDelete => {
+    const handleDelete = (idToDelete) => {
+        console.log(idToDelete)
         BookingService.deleteBooking(idToDelete)
         .then(() => {
-            setBookings(bookings.filter(booking => booking.id !== idToDelete))
+            setBookings(bookings.filter(booking => booking._id !== idToDelete))
         })
     }
 
@@ -32,7 +33,7 @@ const HotelContainer = () => {
     return(
         <>
         <BookingForm onFormSubmit={(booking) => onFormSubmit(booking)}/>
-        <BookingList bookings={bookings} handleDelete={(booking) => handleDelete(booking)}/>
+        <BookingList bookings={bookings} handleDelete={handleDelete}/>
         </>
     )
 }

@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:5000/api/bookings';
+const baseURL = 'http://localhost:5000/api/bookings/';
 
 const BookingService = {
     getBookings() {
